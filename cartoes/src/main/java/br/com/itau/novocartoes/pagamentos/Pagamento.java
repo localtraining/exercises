@@ -1,10 +1,7 @@
 package br.com.itau.novocartoes.pagamentos;
 
-import br.com.itau.novocartoes.cartao.Cartao;
-
 import javax.persistence.*;
 import java.math.BigDecimal;
-import java.util.Set;
 
 @Entity
 public class Pagamento {

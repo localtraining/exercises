@@ -2,7 +2,6 @@ package br.com.itau.novocartoes.cliente;
 
 import br.com.itau.novocartoes.cartao.Cartao;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import javax.persistence.*;
