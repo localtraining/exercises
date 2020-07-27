@@ -7,16 +7,16 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 public class ClienteController {
     @Autowired
-    private ClienteRepository clienteRepo;
+    private ClienteService clienteService;
 
     @GetMapping(value="/cliente/{id}")
     public Cliente consultarCliente(@PathVariable Integer id) {
-        return clienteRepo.findById(id).orElse(new Cliente());
+        return clienteService.consultarCliente(id);
     }
 
     @PostMapping(value="/cliente")
     @ResponseStatus(HttpStatus.CREATED)
     public Cliente criarCliente(@RequestBody Cliente cliente) {
-        return clienteRepo.save(cliente);
+        return clienteService.salvarCliente(cliente);
     }
 }

@@ -7,31 +7,22 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 public class CartaoController {
     @Autowired
-    private CartaoRepository cartaoRepo;
+    public CartaoService cartaoService;
 
     @GetMapping(value="/cartao/{id}")
     public Cartao consultarCliente(@PathVariable Integer id) {
-        Cartao cartaoConsulta = cartaoRepo.findById(id).orElse(new Cartao());
-        cartaoConsulta.setAtivo(null);
-
-        return cartaoConsulta;
+        return cartaoService.consultarCartao(id);
     }
 
     @PostMapping(value="/cartao")
     @ResponseStatus(HttpStatus.CREATED)
     public Cartao criarCartao(@RequestBody Cartao cartao) {
-        return cartaoRepo.save(cartao);
+        return cartaoService.salvarCartao(cartao);
     }
 
-    @PatchMapping(value="/cartao/{numero}")
+    @PatchMapping(value="/cartao/{numeroCartao}")
     @ResponseStatus(HttpStatus.CREATED)
-    public Cartao ativarCartao(@PathVariable String numero) {
-        Cartao cartaoAtivar = cartaoRepo.findByNumero(numero);
-
-        if(cartaoAtivar != null) {
-            cartaoAtivar.setAtivo(true);
-        }
-
-        return cartaoRepo.save(cartaoAtivar);
+    public Cartao ativarCartao(@PathVariable String numeroCartao) {
+        return cartaoService.ativarCartao(numeroCartao);
     }
 }
