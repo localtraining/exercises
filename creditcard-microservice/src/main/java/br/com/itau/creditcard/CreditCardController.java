@@ -17,9 +17,6 @@ public class CreditCardController {
     @Autowired
     private CreditCardMapper mapper;
 
-    @Autowired
-    private CustomerClient customerClient;
-
     @GetMapping("/{id}")
     public CreditCard findCreditCardByNumber(@PathVariable Long id) {
         return creditCardService.findById(id);
@@ -28,11 +25,9 @@ public class CreditCardController {
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public CreateCreditCardResponse createCreditCard(@Valid @RequestBody CreateCreditCardRequest creditCardRequest) {
-        Customer customer = customerClient.findCustomerById(creditCardRequest.getCustomerId()).orElseThrow(CustomerNotFoundException::new);
+        CreditCard creditCard = mapper.toCreditCard(creditCardRequest);
 
-        CreditCard creditCard = creditCardService.create(creditCardRequest);
-
-        CreateCreditCardResponse creditCardResponse = mapper.toCreateCreditCardResponse(creditCard);
+        CreateCreditCardResponse creditCardResponse = mapper.toCreateCreditCardResponse(creditCardService.create(creditCard));
 
         return creditCardResponse;
     }

@@ -11,6 +11,9 @@ public class CustomerController {
     @Autowired
     private CustomerService customerService;
 
+    @Autowired
+    private CustomerMapper mapper;
+
     @GetMapping(value="/cliente/{id}")
     public Customer find(@PathVariable Long id) {
         return customerService.findById(id);
@@ -18,7 +21,9 @@ public class CustomerController {
 
     @PostMapping(value="/cliente")
     @ResponseStatus(HttpStatus.CREATED)
-    public Customer create(@RequestBody CustomerRequest customer) {
+    public Customer create(@RequestBody CustomerRequest customerRequest) {
+        Customer customer = mapper.toCustomer(customerRequest);
+
         return customerService.create(customer);
     }
 }

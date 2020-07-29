@@ -1,8 +1,7 @@
 package br.com.itau.creditcard;
 
 import br.com.itau.creditcard.model.CreditCard;
-import br.com.itau.creditcard.model.dto.CreateCreditCardRequest;
-import br.com.itau.creditcard.model.dto.CreditCardMapper;
+import br.com.itau.creditcard.model.dto.Customer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,10 +11,10 @@ public class CreditCardService {
     private CreditCardRepository creditCardRepository;
 
     @Autowired
-    private CreditCardMapper mapper;
+    private CustomerClient customerClient;
 
-    public CreditCard create(CreateCreditCardRequest creditCardRequest) {
-        CreditCard creditCard = mapper.toCreditCard(creditCardRequest);
+    public CreditCard create(CreditCard creditCard) {
+        Customer customer = customerClient.findCustomerById(creditCard.getCustomerId()).orElseThrow(CustomerNotFoundException::new);
         creditCard.setActive(false);
 
         return creditCardRepository.save(creditCard);
