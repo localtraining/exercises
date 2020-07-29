@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>br.com.itau</groupId>
-	<artifactId>cartoes</artifactId>
+	<artifactId>cartoes-monolith</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>cartoes</name>
-	<description>Projeto de Cartões</description>
+	<name>cartoes-monolith</name>
+	<description>Projeto de Cartões - Monolito</description>
 
 	<properties>
 		<java.version>1.8</java.version>
