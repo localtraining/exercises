@@ -1,4 +1,4 @@
-package br.com.itau;
+package br.com.itau.customer;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

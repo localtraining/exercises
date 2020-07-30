@@ -1,5 +1,7 @@
-package br.com.itau.customer;
+package br.com.itau.customer.controller;
 
+import br.com.itau.customer.model.CustomerMapper;
+import br.com.itau.customer.service.CustomerService;
 import br.com.itau.customer.model.Customer;
 import br.com.itau.customer.model.dto.CustomerRequest;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,4 +1,4 @@
-package br.com.itau.customer;
+package br.com.itau.customer.repository;
 
 import br.com.itau.customer.model.Customer;
 import org.springframework.data.jpa.repository.JpaRepository;

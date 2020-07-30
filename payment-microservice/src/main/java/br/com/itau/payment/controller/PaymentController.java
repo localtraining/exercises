@@ -1,7 +1,9 @@
-package br.com.itau.payment;
+package br.com.itau.payment.controller;
 
+import br.com.itau.payment.model.Payment;
 import br.com.itau.payment.model.dto.PaymentMapper;
 import br.com.itau.payment.model.dto.PaymentRequest;
+import br.com.itau.payment.service.PaymentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;

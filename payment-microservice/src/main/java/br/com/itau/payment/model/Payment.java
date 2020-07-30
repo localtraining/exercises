@@ -1,4 +1,4 @@
-package br.com.itau.payment;
+package br.com.itau.payment.model;
 
 
 

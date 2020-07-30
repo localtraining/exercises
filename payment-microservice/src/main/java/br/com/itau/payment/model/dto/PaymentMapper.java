@@ -1,6 +1,6 @@
 package br.com.itau.payment.model.dto;
 
-import br.com.itau.payment.Payment;
+import br.com.itau.payment.model.Payment;
 import org.springframework.stereotype.Component;
 
 @Component

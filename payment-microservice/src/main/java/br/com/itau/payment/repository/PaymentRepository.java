@@ -1,5 +1,6 @@
-package br.com.itau.payment;
+package br.com.itau.payment.repository;
 
+import br.com.itau.payment.model.Payment;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

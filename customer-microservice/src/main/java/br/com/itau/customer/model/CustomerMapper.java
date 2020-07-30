@@ -1,4 +1,4 @@
-package br.com.itau.customer;
+package br.com.itau.customer.model;
 
 import br.com.itau.customer.model.Customer;
 import br.com.itau.customer.model.dto.CustomerRequest;

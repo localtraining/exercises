@@ -1,4 +1,4 @@
-package br.com.itau.creditcard;
+package br.com.itau.creditcard.repository;
 
 import br.com.itau.creditcard.model.CreditCard;
 import org.springframework.data.jpa.repository.JpaRepository;

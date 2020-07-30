@@ -1,5 +1,9 @@
-package br.com.itau.payment;
+package br.com.itau.payment.service;
 
+import br.com.itau.payment.client.CreditCardClient;
+import br.com.itau.payment.exception.CreditCardNotFoundException;
+import br.com.itau.payment.repository.PaymentRepository;
+import br.com.itau.payment.model.Payment;
 import br.com.itau.payment.model.dto.CreditCard;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

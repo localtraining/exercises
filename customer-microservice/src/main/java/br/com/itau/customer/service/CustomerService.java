@@ -1,6 +1,8 @@
-package br.com.itau.customer;
+package br.com.itau.customer.service;
 
+import br.com.itau.customer.exception.CustomerNotFoundException;
 import br.com.itau.customer.model.Customer;
+import br.com.itau.customer.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

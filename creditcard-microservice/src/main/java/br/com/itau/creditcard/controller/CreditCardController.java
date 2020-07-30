@@ -1,7 +1,8 @@
-package br.com.itau.creditcard;
+package br.com.itau.creditcard.controller;
 
 import br.com.itau.creditcard.model.CreditCard;
 import br.com.itau.creditcard.model.dto.*;
+import br.com.itau.creditcard.service.CreditCardService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;

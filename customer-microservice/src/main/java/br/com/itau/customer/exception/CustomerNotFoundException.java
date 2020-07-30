@@ -1,4 +1,4 @@
-package br.com.itau.customer;
+package br.com.itau.customer.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
