@@ -1,6 +1,7 @@
 package br.com.itau.payment.controller;
 
 import br.com.itau.payment.model.Payment;
+import br.com.itau.payment.model.dto.PayedTransactionsResponse;
 import br.com.itau.payment.model.dto.PaymentMapper;
 import br.com.itau.payment.model.dto.PaymentRequest;
 import br.com.itau.payment.service.PaymentService;
@@ -21,7 +22,7 @@ public class PaymentController {
 
     @GetMapping(value="/pagamentos/{creditCardId}")
     public List<Payment> listByCreditCardId(@PathVariable Long creditCardId) {
-        return paymentService.listByCreditCardId(creditCardId);
+        return paymentService.listNotPayedByCreditCardId(creditCardId);
     }
 
     @PostMapping(value="/pagamento")
@@ -30,5 +31,10 @@ public class PaymentController {
         Payment payment = paymentMapper.toPayment(paymentRequest);
 
         return paymentService.create(payment);
+    }
+
+    @PatchMapping(value="/pagar/{creditCardId}")
+    public PayedTransactionsResponse pay(@PathVariable Long creditCardId) {
+        return paymentService.payCard(creditCardId);
     }
 }
